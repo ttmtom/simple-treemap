@@ -77,10 +77,10 @@ export function jsonStringChecker(string) {
         };
     }
 
-    console.log('-0----done', parseResult.length);
     return {
         valid: true,
         error: '',
         maxNumOfRow: parseResult.length,
+        result: parseResult,
     };
 }

@@ -8,6 +8,7 @@ import {setGraphData} from '../redux/graphData/graphDataActions';
 const InputView = () => {
     const [jsonFieldValue, setJsonFieldValue] = useState('');
     const [jsonFieldHelpText, setJsonFieldHelpText] = useState(' ');
+    const [jsonInputObj, setJsonInputObj] = useState();
     const [isValidJson, setIsVaildJson] = useState(true);
     const [maxNumOfRow, setMaxOfRow] = useState(0);
     const [numOfRow, setNumOfRow] = useState(0);
@@ -29,12 +30,13 @@ const InputView = () => {
             setIsVaildJson(true);
             setJsonFieldHelpText(' ');
             setMaxOfRow(checkingResult.maxNumOfRow);
+            setJsonInputObj(checkingResult.result);
         } else {
             setIsVaildJson(false);
             setJsonFieldHelpText(checkingResult.error);
         }
         setJsonFieldValue(string);
-    }, [setJsonFieldValue, setIsVaildJson, setJsonFieldHelpText]);
+    }, [setJsonFieldValue, setIsVaildJson, setJsonFieldHelpText. setJsonInputObj]);
 
     const handleNumOfRowInput = useCallback((event) => {
         const input = event.target.value;
@@ -47,8 +49,8 @@ const InputView = () => {
     }, [setNumOfRow, setIsValidRowNum, maxNumOfRow]);
 
     const handleSubmitBtnOnClick = useCallback(() => {
-        dispatch(setGraphData(jsonFieldValue, numOfRow));
-    }, [dispatch, jsonFieldValue, numOfRow]);
+        dispatch(setGraphData(jsonInputObj, numOfRow));
+    }, [dispatch, jsonInputObj, numOfRow]);
 
     return (
         <div>
