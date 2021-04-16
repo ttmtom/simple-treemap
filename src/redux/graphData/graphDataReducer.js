@@ -1,28 +1,17 @@
 import Constants from './graphDataConstants';
 
 const INITIAL_STATE = {
-    init: {
-        isPrivateConnect: false,
-        loggedIn: false,
-        userIp: '-',
-    }
+    numOfRow: 0,
+    data: [],
+    maxWidth: 0,
 };
 
-function commonReducer(state = INITIAL_STATE, action) {
+function graphDataReducer(state = INITIAL_STATE, action) {
     switch (action.type) {
-        case Constants.SET_INIT_DATA: {
+        case Constants.SET_GRAPH_DATA: {
             return {
                 ...state,
-                init: action.data,
-            };
-        }
-        case Constants.SET_IS_PRIVATE_CONNECT: {
-            return {
-                ...state,
-                init: {
-                    ...state.init,
-                    isPrivateConnect: action.isPrivate,
-                },
+                ...action.data,
             };
         }
         default: {
@@ -31,4 +20,4 @@ function commonReducer(state = INITIAL_STATE, action) {
     }
 }
 
-export default commonReducer;
+export default graphDataReducer;

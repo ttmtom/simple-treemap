@@ -44,7 +44,7 @@ module.exports = {
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         title: 'Simple Treemap',
-        template: './public/index.prod.html'
+        template: './public/index.html'
       }),
     ]
 };
