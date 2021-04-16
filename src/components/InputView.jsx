@@ -49,7 +49,7 @@ const InputView = () => {
     }, [setNumOfRow, setIsValidRowNum, maxNumOfRow]);
 
     const handleSubmitBtnOnClick = useCallback(() => {
-        dispatch(setGraphData(jsonInputObj, numOfRow));
+        dispatch(setGraphData(jsonInputObj, parseInt(numOfRow, 10)));
     }, [dispatch, jsonInputObj, numOfRow]);
 
     return (

@@ -14,7 +14,7 @@ if (process.env.NODE_ENV === 'development') {
 
 export default configureStore({
     reducer: {
-        graph: graphDataReducer,
+        graphData: graphDataReducer,
     },
     middleware,
 });

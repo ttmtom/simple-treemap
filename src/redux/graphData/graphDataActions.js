@@ -8,6 +8,7 @@ export function setGraphData(data, numOfRow) {
         type: Constants.SET_GRAPH_DATA,
         data: {
             data: result.data,
+            maxWidth: result.maxWidth,
             numOfRow,
         },
     };
