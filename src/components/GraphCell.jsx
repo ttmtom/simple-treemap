@@ -1,27 +1,27 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import Tooltip from '@material-ui/core/Tooltip';
 
 const GraphCell = (props) => {
     const {fullWidth, data} = props;
 
-    return (
-        <Tooltip
-            title={
-                <span
-                    style={{
-                        height: '100%',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                    }}
-                >
-                    {data.name}
-                    <br />
-                    {`${data.value * 100}%`}
-                </span>
-            }
+    const detailCompoment = useMemo(() => (
+        <span
+            style={{
+                height: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+            }}
         >
+            {data.name}
+            <br />
+            {`${data.value * 100}%`}
+        </span>
+    ), [data]);
+
+    return (
+        <Tooltip title={detailCompoment} >
             <div
                 style={{
                     width: `${(data.weight / fullWidth) * 100}%`,
@@ -36,18 +36,7 @@ const GraphCell = (props) => {
                     userSelect: 'none',
                 }}
             >
-                <span
-                    style={{
-                        height: '100%',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                    }}
-                >
-                    {data.name}
-                    <br />
-                    {`${data.value * 100}%`}
-                </span>
+                {detailCompoment}
             </div>
         </Tooltip>
     )
