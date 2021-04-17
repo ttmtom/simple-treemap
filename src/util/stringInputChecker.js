@@ -41,13 +41,6 @@ export function jsonStringChecker(string) {
         };
     }
 
-    if (typeof parseResult !== 'object') {
-        return {
-            valid: false,
-            error: 'Not an Object',
-        };
-    }
-
     if (!Array.isArray(parseResult)) {
         return {
             valid: false,

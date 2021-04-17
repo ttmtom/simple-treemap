@@ -4,7 +4,7 @@
   "description": "Simple Treemap",
   "main": "index.js",
   "scripts": {
-    "test": "",
+    "test": "jest",
     "start": "webpack serve --config webpack.dev.js --host 0.0.0.0",
     "build": "webpack --config webpack.prod.js"
   },
@@ -21,6 +21,7 @@
     "css-loader": "^5.0.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.5.0",
+    "jest": "^26.6.3",
     "path": "^0.12.7",
     "redux-logger": "^3.0.6",
     "style-loader": "^2.0.0",
