@@ -38,3 +38,7 @@ Click `submit` and get your graph :)
 3. run `npm install`
 4. run `npm run build`
 5. get the product in `dist/`
+
+## Test
+
+1. run `npm run test`
